@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Sério</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        form label, form input, form select, form button {
+            display: block;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+        form label {
+            font-weight: bold;
+            color: #333;
+        }
+        form input, form select {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        /* Estilo do tema noturno */
+        .dark-mode body {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode .container {
+            background-color: #333;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode h1 {
+            color: #eee;
+        }
+        .dark-mode form label, .dark-mode form input, .dark-mode form select, .dark-mode form button {
+            color: #ddd;
+            border-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Cadastro</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg" required>
+
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="homem">Homem</option>
+                <option value="mulher">Mulher</option>
+                <option value="comunista">Comunista</option>
+            </select>
+
+            <label for="estadoCivil">Estado Civil:</label>
+            <select id="estadoCivil" name="estadoCivil" required>
+                <option value="solteiro">Solteiro</option>
+                <option value="casado">Casado</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="viuvo">Viúvo</option>
+            </select>
+
+            <label for="fotoFrenteCartao">Foto do Cartão (Frente):</label>
+            <input type="file" id="fotoFrenteCartao" name="fotoFrenteCartao" accept="image/*" required>
+
+            <label for="fotoVersoCartao">Foto do Cartão (Verso):</label>
+            <input type="file" id="fotoVersoCartao" name="fotoVersoCartao" accept="image/*" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <input type="checkbox" id="themeToggle">
+    <label for="themeToggle">Alternar Tema</label>
+    <button id="toggleButton">Alternar Modo</button>
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const body = document.body;
+        
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
